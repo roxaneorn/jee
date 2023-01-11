@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="#">CRUD</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse d-flex justify-content-end"
+			id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link"
+					href="login.html">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+
+		<h2>Create profil</h2>
+		<form action="save" method="post">
+			<!-- <div class="form-group">
+				<label for="CUST_ID">ID du client</label> 
+				<input type="text" class="form-control" id="CUST_ID"
+					placeholder="Entrez l'ID du client">
+			</div> -->
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button"
+					data-bs-toggle="dropdown" aria-expanded="false">Choose role</button>
+				<ul class="dropdown-menu dropdown-menu-dark">
+					<li><a class="dropdown-item active" href="#">user</a></li>
+				</ul>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input type="text"
+					class="form-control" name="email" id="email"
+					placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label> <input type="text"
+					class="form-control" name="password" id="password"
+					placeholder="Enter password">
+			</div>
+			<div class="form-group">
+				<label for="firstName">Firstname</label> <input type="text"
+					class="form-control" name="firstName" id="firstName"
+					placeholder="Enter firstname">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Lastname</label> <input type="text"
+					class="form-control" name="POSTAL_CODE" id="POSTAL_CODE"
+					placeholder="Enter lastname">
+			</div>
+			<div class="form-group">
+				<label for="DateCreation">Date de création</label> <input
+					type="text" class="form-control" name="DateCreation"
+					id="DateCreation" placeholder="Enter date of creation">
+			</div>
+			<button type="submit" class="btn btn-primary">Ajouter</button>
+		</form>
+
+
+	</div>
+</body>
+</html>
