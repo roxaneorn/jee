@@ -23,8 +23,7 @@ public class User implements java.io.Serializable {
 	public User() {
 
 	}
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
+	
 	@Column(name="email")
 	public String getEmail() {
 		return email;
@@ -46,6 +45,9 @@ public class User implements java.io.Serializable {
 	public String toString() {
 		return "User [email=" + email + ", password=" + password + "]";
 	}
+	
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name="iduser")
 	public Integer getIdUser() {
 		return IdUser;

@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.formation.inti.entity.Employee;
 import fr.formation.inti.entity.User;
+import fr.formation.inti.service.EmployeeService;
+import fr.formation.inti.service.EmployeeServiceImpl;
 import fr.formation.inti.service.UserService;
 import fr.formation.inti.service.UserServiceImpl;
 
@@ -19,41 +22,28 @@ import fr.formation.inti.service.UserServiceImpl;
  * Servlet implementation class loginControler
  */
 @WebServlet("/login")
-public class loginControler extends HttpServlet {
+public class LoginControler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private UserService userService;
+	private EmployeeService employeeService;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public loginControler() {
+	public LoginControler() {
 		this.userService = new UserServiceImpl();
+		this.employeeService = new EmployeeServiceImpl();
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			response.sendRedirect(request.getContextPath());
-		} else {
-			String message = request.getParameter("This email doesn't exist. Create your session !");
-			request.setAttribute("This email doesn't exist. Create your session !", message);
-			request.getServletContext().getRequestDispatcher("/user").forward(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		
+			request.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
 		}
-
-//		String email = request.getParameter("email");
-//		String password = request.getParameter("password");
-//		
-//		User user = userService.findByEmail(email);
-//		
-//		List<User> list = userService.findAll();
-//		list.forEach(System.out::println);
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -68,12 +58,12 @@ public class loginControler extends HttpServlet {
 		if (user != null && user.getPassword().equals(password) && "admin".equals(user.getRoleName())) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			request.getServletContext().getRequestDispatcher("/employeeAdmin.jsp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);
 			
 		}else if (user != null && user.getPassword().equals(password) && "user".equals(user.getRoleName())){
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			request.getServletContext().getRequestDispatcher("/employee.jsp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);
 		}else {
 			request.getServletContext().getRequestDispatcher("/loginfail.html").forward(request, response);
 			

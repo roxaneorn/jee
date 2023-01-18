@@ -19,12 +19,6 @@ public class Employee implements Serializable {
 	@Column(name="EMP_ID")
 	private int empId;
 
-	@Column(name="ASSIGNED_BRANCH_ID")
-	private int assignedBranchId;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="END_DATE")
-	private Date endDate;
 
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -63,21 +57,8 @@ public class Employee implements Serializable {
 		this.empId = empId;
 	}
 
-	public int getAssignedBranchId() {
-		return this.assignedBranchId;
-	}
+	
 
-	public void setAssignedBranchId(int assignedBranchId) {
-		this.assignedBranchId = assignedBranchId;
-	}
-
-	public Date getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
 
 	public String getFirstName() {
 		return this.firstName;

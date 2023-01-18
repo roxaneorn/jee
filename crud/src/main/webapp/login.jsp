@@ -1,8 +1,9 @@
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>CRUD - Login</title>
+<title>CRUD - login</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <link rel="shortcut icon" type="image/x-icon" href="groupe_travail.png"/>
@@ -17,23 +18,23 @@
 		</button>
 	</nav>
 
-	<div class="text-center mx-auto w-50 mt-5">
+	<div class="text-center mx-3 mt-5">
 		<h1>Login</h1>
 		<form action="login" method="post">
-			<label for="email_address">Email</label> <input type="text"
-				id="email" class="form-control" name="email" required autofocus>
-			<label for="password">Password</label> <input type="password"
-				id="password" class="form-control" name="password" required>
-			<h6>Email or password incorrect</h6>
+			
+				<div class="form-group w-50 mx-auto">
+					<label for="email_address">Email</label> <input type="text"
+						id="email" class="form-control" name="email" required autofocus>
+				</div>
+				<div class="form-group w-50 mx-auto">
+					<label for="password">Password</label> <input type="password"
+						id="password" class="form-control" name="password" required>
+				</div>
+
 			<br>
-
 			<button type="submit" class="btn btn-secondary">Connexion</button>
-
-			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link"
-					href="user.html">Create profil</a></li>
-			</ul>
-
+			<br> <a class="nnav-item active text-dark" href="adduser">Create
+				profil</a>
 
 		</form>
 	</div>
